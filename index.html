@@ -13,7 +13,8 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Source+Sans+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap"
       rel="stylesheet"
     />
-    <title>Calcul de salaire Vieux-Port</title>
+    <link rel="shortcut icon" type="image/jpg" href="/VPM - FR.jpg" />
+    <title>Calcule de salaire Vieux-Port</title>
   </head>
   <body>
     <div class="image-container">
@@ -25,23 +26,40 @@
     </h1>
     <div class="form-container">
       <div class="col-1">
-        <form action="">
-          <label for="poste">Choisicez votre poste:</label>
-          <select name="poste" id="poste" onchange="choixPoste();">
-            <option class="poste-choix" value="Patrouiller">
-              Patrouilleur
-            </option>
-            <option class="poste-choix" value="Superviseur">Superviseur</option>
-          </select>
-          <p>Salaire: <span id="salaire">18,88$</span> par heure</p>
-          <label for="heures">Nombre d'heure regulier par semaine:</label>
-          <input type="number" id="heures" name="heures" min="1" /><br />
-          <label for="heures-sup"
-            >Nombre d'heure suplementaire par semaine:</label
-          >
-          <input type="number" id="heures-sup" name="heure-sup" min="0" /><br />
-          <button class="button-cal" onclick="test()">Calculer</button>
-        </form>
+        <label for="poste">Choisicez votre poste:</label>
+        <select name="poste" id="poste" onchange="choixPoste();">
+          <option class="poste-choix" value="Patrouiller">Patrouilleur</option>
+          <option class="poste-choix" value="Superviseur">Superviseur</option>
+        </select>
+        <p>Salaire: <span id="salaire">18.88$</span> par heure</p>
+        <label for="heures">Nombre d'heure regulier par semaine:</label>
+        <input
+          type="number"
+          id="heures"
+          name="heures"
+          min="0"
+          value="0"
+          onchange="nombreHr(this)"
+        /><br />
+        <label for="heures-sup"
+          >Nombre d'heure suplementaire par semaine:</label
+        >
+        <input
+          type="number"
+          id="heures-sup"
+          name="heure-sup"
+          min="0"
+          value="0"
+          onchange="nombreHrSup(this)"
+        /><br />
+
+        <button
+          class="button-cal"
+          onclick="salaireDeuxSemainesBrut(); salaireDeuxSemainesNet(); salaireMoisBrut(); salaireMoisNet(); salaireAnnuelBrut(); salaireAnnuelNet()"
+        >
+          Calculer
+        </button>
+
         <h3>Retenues:</h3>
         <p>RRQ/RPC 5,7%</p>
         <p>IMP FED 15% ou 20,5%</p>
@@ -52,12 +70,17 @@
       </div>
       <div class="col-2">
         <h2>Salaire au 2 semaines:</h2>
-        <h1 id="salaire-2semaines">700$</h1>
+        <h1 id="salaire-2semaines"></h1>
+        <h1 id="salaire-2semainesnet"></h1>
         <h2>Salaire au mois (a ce rythm):</h2>
+        <h1 id="salaire-mois"></h1>
+        <h1 id="salaire-moisnet"></h1>
         <h2>Salaire annuel (a ce rythm):</h2>
+        <h1 id="salaire-annee"></h1>
+        <h1 id="salaire-anneenet"></h1>
       </div>
     </div>
-
+    <footer></footer>
     <script src="/main.js"></script>
   </body>
 </html>
