@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.image-container {
+  text-align: center;
+  margin-bottom: 50px;
+  background-color: rgb(0, 110, 255);
+}
+.image-container img {
+  height: 300px;
+  width: 300px;
+}
+
+.main-title {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.col-1 {
+  padding: 30px 30px 30px 60px;
+}
+
+.col-1 form > label {
+  padding: 0px 0px 0px 0px;
+}
+
+#salaire {
+  font-weight: bold;
+}
+form * {
+  margin-bottom: 15px;
+}
+
+input[type="number"],
+select {
+  font: 0.9rem sans-serif;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  margin-top: 10px;
+}
+
+form label,
+p,
+span {
+  font-size: larger;
+}
+
+/* button */
+.button-cal {
+  background-color: #0a6bff;
+  border-radius: 4px;
+  border: 0;
+  box-shadow: rgba(1, 60, 136, 0.5) 0 -1px 3px 0 inset,
+    rgba(0, 44, 97, 0.1) 0 3px 6px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inherit;
+  font-family: "Space Grotesk", -apple-system, system-ui, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 20px;
+  margin: 0px 0px 25px 0px;
+  min-height: 56px;
+  min-width: 120px;
+  padding: 16px 20px;
+  position: relative;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  transition: all 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.button-cal:hover {
+  background-color: #065dd8;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .button-cal {
+    padding: 16px 44px;
+    min-width: 150px;
+  }
+}
